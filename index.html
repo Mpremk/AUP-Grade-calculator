@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amity University Punjab Grade Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>AUP Grade Calculator</h1>
+
+    <form id="gradeForm">
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" required>
+
+        <label for="credits">Credit Hours:</label>
+        <input type="number" id="credits" required>
+
+        <label>CIAs (Mid Term, Surprise Test, Seminar/Assignment, Term Paper):</label>
+        <input type="number" id="ciaMarks" placeholder="Enter CIA marks out of 50" required>
+
+        <label for="eteMarks">ETE (Theory Exam, Objective Exam):</label>
+        <input type="number" id="eteMarks" placeholder="Enter ETE marks out of 50" required>
+
+        <button type="button" onclick="calculateSGPA()">Add Course</button>
+    </form>
+
+    <h2>Course List:</h2>
+    <ul id="courseList"></ul>
+
+    <h2>Overall SGPA: <span id="overallSGPA">0.00</span></h2>
+
+    <table id="resultTable">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Credits</th>
+                <th>Grades</th>
+                <th>Grade Points</th>
+                <th>Credit Points</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+
+    <!-- Add this section at the bottom of your HTML file, before the closing </body> tag -->
+<div id="additionalInfo">
+    <h2>Additional Information:</h2>
+    
+    
+    <p>The distribution of marks for each course shall be as under:</p>
+    
+    <ul>
+        <li><strong>Continuous Internal Assessment (CIA):</strong> 50%</li>
+        <li><strong>End Semester Examination (ESE):</strong> 50%</li>
+    </ul>
+    
+    <p>The breakup of Continuous Internal Assessment shall be as below:</p>
+    
+    <ul>
+        <li><strong>Mid-Semester Test:</strong> 25 Marks</li>
+        <li><strong>Assignment/Seminar:</strong> 04 Marks</li>
+        <li><strong>Term paper:</strong> 05 Marks</li>
+        <li><strong>Surprise Test (s):</strong> 16 Marks</li>
+    </ul>
+    
+    <p>Four best scores of the minimum six surprise tests will be counted towards the final internal assessment</p>
+    <p>In case of 1 credit course, 3 best scores out of the minimum of 4 surprise tests will be counted towards final internal assessment.</p>
+    
+    <p>The breakup of End Semester Examination (ESE) shall be as below:</p>
+    
+    <ul>
+        <li><strong>End Semester Examination (Subjective):</strong> 25 marks</li>
+        <li><strong>End Semester Examination (Objective) (Online):</strong> 25 marks</li>
+    </ul>
+</div>
+
+<div id="gradeDivisionTables" style="display: flex; justify-content: space-between;">
+
+    <!-- Grade Table -->
+    <div id="gradeTable" style="flex: 1; margin-right: 20px;">
+        <h2>Awards of Grade Table:</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Grade Symbol</th>
+                    <th>Grade</th>
+                    <th>Grade Point</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>O</td>
+                    <td>Outstanding</td>
+                    <td>9.10-10.00</td>
+                </tr>
+                <tr>
+                    <td>A+</td>
+                    <td>Excellent</td>
+                    <td>8.10-9.09</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>Very Good</td>
+                    <td>7.10-8.09</td>
+                </tr>
+                <tr>
+                    <td>B+</td>
+                    <td>Good</td>
+                    <td>6.10-7.09</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>Above Average</td>
+                    <td>5.10-6.09</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>Average</td>
+                    <td>4.50-5.09</td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>Pass</td>
+                    <td>4.00-4.49</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Division Table -->
+    <div id="divisionTable" style="flex: 1;">
+        <h2>Awards of Division Table:</h2><p>Same for SGPA and CGPA</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>SGPA</th>
+                    <th>Equivalent Division</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9.10-10</td>
+                    <td>Outstanding</td>
+                </tr>
+                <tr>
+                    <td>8.10-9.09</td>
+                    <td>First Division with Distinction</td>
+                </tr>
+                <tr>
+                    <td>6.10-8.09</td>
+                    <td>First Division</td>
+                </tr>
+                <tr>
+                    <td>5.10-6.09</td>
+                    <td>Second Division</td>
+                </tr>
+                
+            </tbody>
+            
+        </table>
+        <div>
+            <p> <strong>Note:If a student gets below 40 in overall marks out of 100 then He/she is allotted "F"</strong></p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
