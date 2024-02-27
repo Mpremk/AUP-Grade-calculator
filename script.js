@@ -3,15 +3,18 @@ const courses = [];
 function calculateSGPA() {
     const courseName = document.getElementById('courseName').value;
     const credits = parseFloat(document.getElementById('credits').value);
-    const ciaMarks = parseFloat(document.getElementById('ciaMarks').value);
+    const ciaMarks1 = parseFloat(document.getElementById('ciaMarks1').value);
+    const ciaMarks2 = parseFloat(document.getElementById('ciaMarks2').value);
     const eteMarks = parseFloat(document.getElementById('eteMarks').value);
+    const eteMarksObj = parseFloat(document.getElementById('eteMarksObj').value);
 
-    if (!courseName || isNaN(credits) || isNaN(ciaMarks) || isNaN(eteMarks)) {
+    if (!courseName || isNaN(credits) || isNaN(ciaMarks1) || isNaN(ciaMarks2) || isNaN(eteMarks) || isNaN(eteMarksObj)) {
         alert('Please fill in all fields with valid numeric values.');
         return;
     }
 
-    const totalMarks = ciaMarks + eteMarks;
+    const totalCiaMarks = ciaMarks1 + ciaMarks2;
+    const totalMarks = totalCiaMarks + eteMarks + eteMarksObj;
     const { grade, gradePoints, creditPoints } = calculateGradePoints(totalMarks, credits);
 
     courses.push({
@@ -25,13 +28,14 @@ function calculateSGPA() {
     // Clear the form
     document.getElementById('courseName').value = '';
     document.getElementById('credits').value = '';
-    document.getElementById('ciaMarks').value = '';
+    document.getElementById('ciaMarks1').value = '';
+    document.getElementById('ciaMarks2').value = '';
     document.getElementById('eteMarks').value = '';
+    document.getElementById('eteMarksObj').value = '';
 
     updateCourseList();
     calculateOverallSGPA();
 }
-
 function calculateGradePoints(totalMarks, credits) {
     let grade = '';
     let gradePoints = 0;
