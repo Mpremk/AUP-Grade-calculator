@@ -18,11 +18,17 @@
         <label for="credits">Credit Hours:</label>
         <input type="number" id="credits" required>
 
-        <label>CIAs (Mid Term, Surprise Test, Seminar/Assignment, Term Paper):</label>
-        <input type="number" id="ciaMarks" placeholder="Enter CIA marks out of 50" required>
+        <label>CIAs ( Surprise Test, Seminar/Assignment, Term paper):</label>
+        <input type="number" id="ciaMarks" placeholder="Enter CA marks out of 25" required>
 
-        <label for="eteMarks">ETE (Theory Exam, Objective Exam):</label>
-        <input type="number" id="eteMarks" placeholder="Enter ETE marks out of 50" required>
+        <label>CIAs ( Mid Term ):</label>
+        <input type="number" id="ciaMarks" placeholder="Enter Mid-Semester marks out of 25" required>
+
+        <label for="eteMarks">ETE ( Theory Exam ):</label>
+        <input type="number" id="eteMarks" placeholder="Enter ETE Theory marks out of 25" required>
+
+        <label for="eteMarks">ETE ( Objective Exam):</label>
+        <input type="number" id="eteMarks" placeholder="Enter ETE objective marks out of 25" required>
 
         <button type="button" onclick="calculateSGPA()">Add Course</button>
     </form>
@@ -47,7 +53,7 @@
 
     <script src="script.js"></script>
 
-    <!-- Add this section at the bottom of your HTML file, before the closing </body> tag -->
+    <!-- aditional information -->
     <div id="additionalInfo">
     <h2>Additional Information:</h2>
     
