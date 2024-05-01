@@ -3,7 +3,7 @@
 
 <p id="description">A simple GPA (Grade Point Average) calculator designed for AMITY University Punjab. This calculator allows users to input their course credits and achieved marks to calculate their GPA, grades & grade points.</p>
 
-<h4>Demo https://mpremk.github.io/AUP-Grade-calculator </h4>
+<h6>Demo https://mpremk.github.io/AUP-Grade-calculator </h6>
 
 
 
